@@ -1,0 +1,16 @@
+FROM ubuntu
+
+ARG DEBIAN_FRONTEND=noninteractive
+ARG TZ=Asia/Novosibirsk
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update
+RUN apt install -y python3-pip
+
+COPY docker_requirements.txt .
+RUN pip install -r docker_requirements.txt
+
+EXPOSE 8000 
+
+CMD ["bash"]
