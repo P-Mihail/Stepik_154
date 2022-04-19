@@ -26,3 +26,14 @@
 4. `ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf`
 5. `/etc/init.d/nginx restart`
 6. `gunicorn -c /home/box/web/etc/gunicorn.conf.py hello:app`
+
+
+## 2.1 MVC фреймворки (Создание Django приложения)
+
+### Для локального запуска и экспериментов
+Пункты 3-5 выполняются только при первом запуске, чтоб создать на робочей машине начальную структуру Django приложения.
+1. `docker build -t stepik154:latest .`
+2. `docker run -it -v "{ABS_PATH_TO_PROJECT}:/home/box/web" -p 80:80 -p 8080:8080 -p 8000:8000 stepik154:latest`
+3. `mkdir home/box/web/ask && cd "$_"`
+4. `django-admin startproject ask .`
+5. `python3 -B manage.py startapp qa`
