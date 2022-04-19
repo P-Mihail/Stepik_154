@@ -15,5 +15,6 @@ RUN pip install -r docker_requirements.txt
 
 EXPOSE 80
 EXPOSE 8080
+EXPOSE 8000
 
 CMD ["bash"]
