@@ -25,7 +25,7 @@
 3. `unlink /etc/nginx/sites-enabled/default`
 4. `ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf`
 5. `/etc/init.d/nginx restart`
-6. `gunicorn -c /home/box/web/etc/gunicorn.conf.py hello:app`
+6. `gunicorn -D -c /home/box/web/etc/gunicorn-wsgi.conf.py hello:app`
 
 
 ## 2.1 MVC фреймворки (Создание Django приложения)
