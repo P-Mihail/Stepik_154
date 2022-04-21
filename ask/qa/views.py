@@ -7,4 +7,4 @@ def test(request, *args, **kwargs):
 
 
 def test_question_id(request, question_id):
-    return HttpResponse(f"OK {question_id}")
+    return HttpResponse("OK %s" % question_id)
